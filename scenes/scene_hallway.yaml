@@ -1,0 +1,17 @@
+#################################################
+# here's the scene that gets called. Lights in 
+# my living room and kitchen turn on.
+#################################################
+
+
+- name: Hallway lights On
+  entities:
+    light.light_hallway_level:
+      state: on
+      brightness_pct: "50"
+
+- name: Hallway lights Off
+  entities:
+    light.light_hallway_level:
+      state: off
+

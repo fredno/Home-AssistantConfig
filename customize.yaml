@@ -1,0 +1,58 @@
+media_player.ue40d5000_ue40d5000:
+  icon: mdi:television
+media_player.audiobedroom:
+  icon: mdi:google-chrome
+media_player.tvbedroom:
+  icon: mdi:google-chrome
+media_player.tvlivingroom:
+  icon: mdi:google-chrome
+media_player.receiver:
+  icon: mdi:surround-sound
+device_tracker.fredrik_android: {}
+script.radio_nrk:
+  friendly_name: Start Playing
+  icon: mdi:play
+switch.heating_kitchen_switch:
+  friendly_name: Panelovn Kjøkken
+switch.heating_livingroom_switch:
+  friendly_name: Panelovn Stue
+switch.heating_office_switch:
+  friendly_name: Panelovn Kontor
+switch.heating_livingroom_oil_switch:
+  friendly_name: Oljeovn Spisestue
+sensor.sensor_office_temperature:
+  friendly_name: Tempratur Kontor
+sensor.sensor_kitchen_temperature:
+  friendly_name: Tempratur Kjøkken
+sensor.heating_office_energy:
+  friendly_name: Energi Varme Kontor
+sensor.heating_kitchen_energy:
+  friendly_name: Energi Varme Kjøkken
+sensor.heating_livingroom_energy:
+  friendly_name: Energi Varme Stue
+sensor.heating_livingroom_oil_energy:
+  friendly_name: Energi Varme Spisestue
+sensor.inside_livingroom:
+  friendly_name: Tempratur Stue
+sensor.outside_balcony:
+  friendly_name: Tempratur Ute
+media_player.audioeverywhere:
+  icon: mdi:google-chrome
+media_player.audiolivingroom:
+  icon: mdi:google-chrome
+sensor.alarm_smokesensor_battery:
+  friendly_name: Battery røykvarsler
+sensor.door_bathroom_battery:
+  friendly_name: Battery baderomsdør
+sensor.door_main_battery:
+  friendly_name: Battery inngangsdør
+sensor.sensor_kitchen_battery:
+  friendly_name: Battery sensor kjøkken
+sensor.sensor_motion_bathroom_battery:
+  friendly_name: Battery bevegelse bad
+sensor.sensor_office_battery:
+  friendly_name: Battery sensor kontor
+sensor.switch_hall_battery:
+  friendly_name: Battery bryter gang
+sensor.switch_masterbedroom_battery:
+  friendly_name: Battery bryter soverom

@@ -1,0 +1,29 @@
+#################################################
+# here's the scene that gets called. Lights in 
+# my living room and kitchen turn on.
+#################################################
+- name: Livingroom lights On
+#  hide_entity: True
+  entities:
+#    group.livingroom_lights:
+#      state: on
+    switch.light_livingroom_motherdaughter_switch:
+      state: on
+    light.light_livingroom_aroundtv_level:
+      state: on
+    light.light_livingroom_diningroom_level:
+      state: on
+      brightness_pct: "75"
+
+- name: Livingroom lights Off
+#  hide_entity: True
+  entities:
+#    group.livingroom_lights:
+#      state: off
+    switch.light_livingroom_motherdaughter_switch:
+      state: off
+    light.light_livingroom_diningroom_level:
+      state: off
+    light.light_livingroom_aroundtv_level:
+      state: off
+

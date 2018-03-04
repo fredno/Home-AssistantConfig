@@ -1,0 +1,384 @@
+media_player.tvlivingroom:
+  platform: cast
+  unique_id: 2a2302c6-1be0-655c-cf98-890f9f041556
+media_player.tvbedroom:
+  platform: cast
+  unique_id: 4a08da71-d2de-fec1-d55a-50a82c0125dd
+media_player.audiobedroom:
+  platform: cast
+  unique_id: 29b2e878-1fbd-71c7-82c1-13b1519e40ec
+media_player.audiobathroom:
+  platform: cast
+  unique_id: 9527e168-452a-e60b-7744-359b79005ee6
+media_player.audiolivingroom:
+  platform: cast
+  unique_id: 67bcffc4-cd07-5c67-36e6-ef8a8002c0f4
+media_player.audioeverywhere:
+  platform: cast
+  unique_id: f038437d-c6c6-4255-a077-b21d52acf3b0
+light.light_livingroom_aroundtv_level:
+  platform: zwave
+  unique_id: 2-72057594076299265
+sensor.light_livingroom_aroundtv_alarm_type:
+  platform: zwave
+  unique_id: 2-72057594077528065
+sensor.light_livingroom_aroundtv_alarm_level:
+  platform: zwave
+  unique_id: 2-72057594077528081
+sensor.light_livingroom_aroundtv_sourcenodeid:
+  platform: zwave
+  unique_id: 2-72057594077528097
+sensor.light_livingroom_aroundtv_power_management:
+  platform: zwave
+  unique_id: 2-72057594077528241
+switch.light_livingroom_motherdaughter_switch:
+  platform: zwave
+  unique_id: 3-72057594093060096
+light.light_livingroom_diningroom_level:
+  platform: zwave
+  unique_id: 4-72057594109853697
+sensor.light_livingroom_diningroom_alarm_type:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.light_livingroom_diningroom_alarm_level:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.light_livingroom_diningroom_sourcenodeid:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.light_livingroom_diningroom_power_management:
+  platform: zwave
+  unique_id: 4-72057594111082673
+light.light_hallway_level:
+  platform: zwave
+  unique_id: 5-72057594126630913
+light.light_hallway_level_2:
+  platform: zwave
+  unique_id: 5-144115188164558849
+sensor.light_hallway_power:
+  platform: zwave
+  unique_id: 5-72057594126811202
+sensor.light_hallway_energy:
+  platform: zwave
+  unique_id: 5-72057594126827522
+sensor.light_hallway_power_2:
+  platform: zwave
+  unique_id: 5-72057594126827650
+sensor.light_hallway_exporting:
+  platform: zwave
+  unique_id: 5-72057594126828032
+sensor.light_hallway_alarm_type:
+  platform: zwave
+  unique_id: 5-72057594127859713
+sensor.light_hallway_alarm_level:
+  platform: zwave
+  unique_id: 5-72057594127859729
+sensor.light_hallway_sourcenodeid:
+  platform: zwave
+  unique_id: 5-72057594127859745
+sensor.light_hallway_heat:
+  platform: zwave
+  unique_id: 5-72057594127859825
+sensor.light_hallway_power_management:
+  platform: zwave
+  unique_id: 5-72057594127859889
+sensor.light_hallway_system:
+  platform: zwave
+  unique_id: 5-72057594127859905
+light.light_office_level:
+  platform: zwave
+  unique_id: 6-72057594143408129
+light.light_office_level_2:
+  platform: zwave
+  unique_id: 6-144115188181336065
+sensor.light_office_power:
+  platform: zwave
+  unique_id: 6-72057594143588418
+sensor.light_office_energy:
+  platform: zwave
+  unique_id: 6-72057594143604738
+sensor.light_office_power_2:
+  platform: zwave
+  unique_id: 6-72057594143604866
+sensor.light_office_exporting:
+  platform: zwave
+  unique_id: 6-72057594143605248
+sensor.light_office_alarm_type:
+  platform: zwave
+  unique_id: 6-72057594144636929
+sensor.light_office_alarm_level:
+  platform: zwave
+  unique_id: 6-72057594144636945
+sensor.light_office_sourcenodeid:
+  platform: zwave
+  unique_id: 6-72057594144636961
+sensor.light_office_heat:
+  platform: zwave
+  unique_id: 6-72057594144637041
+sensor.light_office_power_management:
+  platform: zwave
+  unique_id: 6-72057594144637105
+sensor.light_office_system:
+  platform: zwave
+  unique_id: 6-72057594144637121
+light.light_masterbedroom_level:
+  platform: zwave
+  unique_id: 8-72057594176962561
+sensor.light_masterbedroom_alarm_type:
+  platform: zwave
+  unique_id: 8-72057594178191361
+sensor.light_masterbedroom_alarm_level:
+  platform: zwave
+  unique_id: 8-72057594178191377
+sensor.light_masterbedroom_sourcenodeid:
+  platform: zwave
+  unique_id: 8-72057594178191393
+sensor.light_masterbedroom_power_management:
+  platform: zwave
+  unique_id: 8-72057594178191537
+switch.light_bath_switch:
+  platform: zwave
+  unique_id: 9-72057594193723392
+sensor.light_bath_alarm_type:
+  platform: zwave
+  unique_id: 9-72057594194968577
+sensor.light_bath_alarm_level:
+  platform: zwave
+  unique_id: 9-72057594194968593
+sensor.light_bath_sourcenodeid:
+  platform: zwave
+  unique_id: 9-72057594194968609
+sensor.light_bath_power_management:
+  platform: zwave
+  unique_id: 9-72057594194968753
+switch.light_toilet_switch:
+  platform: zwave
+  unique_id: 10-72057594210500608
+sensor.light_toilet_alarm_type:
+  platform: zwave
+  unique_id: 10-72057594211745793
+sensor.light_toilet_alarm_level:
+  platform: zwave
+  unique_id: 10-72057594211745809
+sensor.light_toilet_sourcenodeid:
+  platform: zwave
+  unique_id: 10-72057594211745825
+sensor.light_toilet_power_management:
+  platform: zwave
+  unique_id: 10-72057594211745969
+sensor.door_main_alarm_type:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.door_main_alarm_level:
+  platform: zwave
+  unique_id: 13-72057594262077457
+binary_sensor.door_main_sensor:
+  platform: zwave
+  unique_id: 13-72057594261012480
+sensor.door_main_sourcenodeid:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.door_main_burglar:
+  platform: zwave
+  unique_id: 13-72057594262077601
+sensor.sensor_kitchen_alarm_type:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.sensor_kitchen_alarm_level:
+  platform: zwave
+  unique_id: 14-72057594278854673
+binary_sensor.sensor_kitchen_sensor:
+  platform: zwave
+  unique_id: 14-72057594277789696
+sensor.sensor_kitchen_temperature:
+  platform: zwave
+  unique_id: 14-72057594277806098
+sensor.sensor_kitchen_luminance:
+  platform: zwave
+  unique_id: 14-72057594277806130
+sensor.sensor_kitchen_sourcenodeid:
+  platform: zwave
+  unique_id: 14-72057594278854689
+sensor.sensor_kitchen_burglar:
+  platform: zwave
+  unique_id: 14-72057594278854817
+sensor.sensor_motion_bathroom_alarm_type:
+  platform: zwave
+  unique_id: 15-72057594295631873
+sensor.sensor_motion_bathroom_alarm_level:
+  platform: zwave
+  unique_id: 15-72057594295631889
+binary_sensor.sensor_motion_bathroom_sensor:
+  platform: zwave
+  unique_id: 15-72057594294566912
+sensor.sensor_motion_bathroom_luminance:
+  platform: zwave
+  unique_id: 15-72057594294583346
+sensor.sensor_motion_bathroom_sourcenodeid:
+  platform: zwave
+  unique_id: 15-72057594295631905
+sensor.sensor_motion_bathroom_burglar:
+  platform: zwave
+  unique_id: 15-72057594295632033
+binary_sensor.door_bathroom_sensor:
+  platform: zwave
+  unique_id: 16-72057594311344128
+sensor.door_bathroom_alarm_type:
+  platform: zwave
+  unique_id: 16-72057594312409089
+sensor.door_bathroom_alarm_level:
+  platform: zwave
+  unique_id: 16-72057594312409105
+sensor.door_bathroom_sourcenodeid:
+  platform: zwave
+  unique_id: 16-72057594312409121
+sensor.door_bathroom_access_control:
+  platform: zwave
+  unique_id: 16-72057594312409233
+sensor.door_bathroom_burglar:
+  platform: zwave
+  unique_id: 16-72057594312409249
+switch.heating_kitchen_switch:
+  platform: zwave
+  unique_id: 17-72057594327941120
+sensor.heating_kitchen_energy:
+  platform: zwave
+  unique_id: 17-72057594328154114
+sensor.heating_kitchen_alarm_type:
+  platform: zwave
+  unique_id: 17-72057594329186305
+sensor.heating_kitchen_alarm_level:
+  platform: zwave
+  unique_id: 17-72057594329186321
+sensor.heating_kitchen_power:
+  platform: zwave
+  unique_id: 17-72057594328154242
+sensor.heating_kitchen_exporting:
+  platform: zwave
+  unique_id: 17-72057594328154624
+sensor.heating_kitchen_sourcenodeid:
+  platform: zwave
+  unique_id: 17-72057594329186337
+sensor.heating_kitchen_power_management:
+  platform: zwave
+  unique_id: 17-72057594329186481
+sensor.heating_kitchen_power_2:
+  platform: zwave
+  unique_id: 17-72057594328137794
+switch.heating_livingroom_switch:
+  platform: zwave
+  unique_id: 18-72057594344718336
+sensor.heating_livingroom_energy:
+  platform: zwave
+  unique_id: 18-72057594344931330
+sensor.heating_livingroom_alarm_type:
+  platform: zwave
+  unique_id: 18-72057594345963521
+sensor.heating_livingroom_alarm_level:
+  platform: zwave
+  unique_id: 18-72057594345963537
+sensor.heating_livingroom_power:
+  platform: zwave
+  unique_id: 18-72057594344931458
+sensor.heating_livingroom_exporting:
+  platform: zwave
+  unique_id: 18-72057594344931840
+sensor.heating_livingroom_sourcenodeid:
+  platform: zwave
+  unique_id: 18-72057594345963553
+sensor.heating_livingroom_power_management:
+  platform: zwave
+  unique_id: 18-72057594345963697
+sensor.heating_livingroom_power_2:
+  platform: zwave
+  unique_id: 18-72057594344915010
+switch.heating_livingroom_oil_switch:
+  platform: zwave
+  unique_id: 19-72057594361495552
+sensor.heating_livingroom_oil_energy:
+  platform: zwave
+  unique_id: 19-72057594361708546
+sensor.heating_livingroom_oil_alarm_type:
+  platform: zwave
+  unique_id: 19-72057594362740737
+sensor.heating_livingroom_oil_alarm_level:
+  platform: zwave
+  unique_id: 19-72057594362740753
+sensor.heating_livingroom_oil_power:
+  platform: zwave
+  unique_id: 19-72057594361708674
+sensor.heating_livingroom_oil_exporting:
+  platform: zwave
+  unique_id: 19-72057594361709056
+sensor.heating_livingroom_oil_sourcenodeid:
+  platform: zwave
+  unique_id: 19-72057594362740769
+sensor.heating_livingroom_oil_power_management:
+  platform: zwave
+  unique_id: 19-72057594362740913
+sensor.heating_livingroom_oil_power_2:
+  platform: zwave
+  unique_id: 19-72057594361692226
+switch.heating_office_switch:
+  platform: zwave
+  unique_id: 20-72057594378272768
+sensor.heating_office_energy:
+  platform: zwave
+  unique_id: 20-72057594378485762
+sensor.heating_office_alarm_type:
+  platform: zwave
+  unique_id: 20-72057594379517953
+sensor.heating_office_alarm_level:
+  platform: zwave
+  unique_id: 20-72057594379517969
+sensor.heating_office_power:
+  platform: zwave
+  unique_id: 20-72057594378485890
+sensor.heating_office_exporting:
+  platform: zwave
+  unique_id: 20-72057594378486272
+sensor.heating_office_sourcenodeid:
+  platform: zwave
+  unique_id: 20-72057594379517985
+sensor.heating_office_power_management:
+  platform: zwave
+  unique_id: 20-72057594379518129
+sensor.heating_office_power_2:
+  platform: zwave
+  unique_id: 20-72057594378469442
+sensor.sensor_office_alarm_type:
+  platform: zwave
+  unique_id: 21-72057594396295169
+sensor.sensor_office_alarm_level:
+  platform: zwave
+  unique_id: 21-72057594396295185
+binary_sensor.sensor_office_sensor:
+  platform: zwave
+  unique_id: 21-72057594395230208
+sensor.sensor_office_temperature:
+  platform: zwave
+  unique_id: 21-72057594395246610
+sensor.sensor_office_luminance:
+  platform: zwave
+  unique_id: 21-72057594395246642
+sensor.sensor_office_sourcenodeid:
+  platform: zwave
+  unique_id: 21-72057594396295201
+sensor.sensor_office_burglar:
+  platform: zwave
+  unique_id: 21-72057594396295329
+binary_sensor.alarm_smokesensor_sensor:
+  platform: zwave
+  unique_id: 22-72057594412007424
+sensor.alarm_smokesensor_alarm_type:
+  platform: zwave
+  unique_id: 22-72057594413072385
+sensor.alarm_smokesensor_alarm_level:
+  platform: zwave
+  unique_id: 22-72057594413072401
+sensor.alarm_smokesensor_sourcenodeid:
+  platform: zwave
+  unique_id: 22-72057594413072417
+sensor.alarm_smokesensor_smoke:
+  platform: zwave
+  unique_id: 22-72057594413072449

@@ -1,0 +1,16 @@
+#################################################
+# here's the scene that gets called. Lights in 
+# my living room and kitchen turn on.
+#################################################
+
+
+- name: Bath lights On
+  entities:
+    group.bathroom_lights:
+      state: on
+
+- name: Bath lights Off
+  entities:
+    group.bathroom_lights:
+      state: off
+

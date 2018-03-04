@@ -1,0 +1,98 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: !secret hass-name
+  latitude:  !secret hass-latitude
+  longitude: !secret hass-longitude
+  elevation: !secret hass-elevation
+  unit_system: !secret hass-unit_system
+  time_zone: !secret hass-time_zone
+
+  # Customization file
+  customize: !include customize.yaml
+
+  # Packages file
+  packages: !include_dir_named packages
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Z-wave
+zwave:
+  #usb_path: /dev/ttyACM0
+  usb_path: /dev/serial/by-id/usb-0658_0200-if00
+  network_key: !secret zwave-network_key
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  api_password: !secret http-password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  base_url: !secret http-base_url
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - samsung_tv
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+mqtt:
+  broker: !secret mqtt-broker
+  port: 1883
+  discovery: true
+  discovery_prefix: homeassistant
+
+# Recorder
+recorder:
+  db_url: !secret recorder-db_url
+#  purge_interval: 1
+
+# Include customization files
+automation: !include automations.yaml
+
+climate: !include climate.yaml
+
+device_tracker: !include device_tracker.yaml
+
+group: !include groups.yaml
+
+history_graph: !include history_graph.yaml
+
+input_number: !include input_number.yaml
+
+input_select: !include input_select.yaml
+
+media_player: !include media_player.yaml
+
+sensor: !include sensor.yaml
+
+script: !include scripts.yaml
+
+#-------------------------------------------
+# Include folder scene
+#-------------------------------------------
+scene: !include_dir_merge_list scenes

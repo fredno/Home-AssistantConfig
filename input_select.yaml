@@ -1,0 +1,21 @@
+radio_station:
+  name: 'Select Radio Station:'
+  options:
+    - NRK P1
+    - NRK P2
+    - NRK P3
+    - NRK P13
+    - Radio Rock
+  initial: NRK P13
+
+chromecast_radio:
+  name: 'Select Speakers:'
+  options:
+    - Livingroom
+    - Bedroom
+    - Bathroom
+    - Not In use
+    - Everywhere
+  initial: Everywhere
+  icon: mdi:speaker-wireless
+

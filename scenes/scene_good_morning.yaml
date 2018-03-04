@@ -1,0 +1,18 @@
+#################################################
+# here's the scene that gets called. Lights in 
+# my living room and kitchen turn on.
+#################################################
+- name: Good Morning
+#  hide_entity: True
+  entities:
+    switch.light_livingroom_motherdaughter_switch:
+      state: on
+    light.light_livingroom_aroundtv_level:
+      state: on
+    light.light_livingroom_diningroom_level:
+      state: on
+      brightness_pct: "75"
+    light.light_hallway_level:
+      state: on
+      brightness_pct: "25"
+

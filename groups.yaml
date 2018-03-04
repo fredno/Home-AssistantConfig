@@ -1,0 +1,210 @@
+default_view:
+  name: "Home"
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.bathroom_lights
+    - group.livingroom_lights
+    - group.master_bedroom_lights
+    - group.hall_lights
+    - group.office_lights
+    - group.routers
+    - group.nas_sensors
+#    - group.devices
+    - device_tracker.fredrik_android
+    - device_tracker.fredrik_iphone
+    - device_tracker.samsungtab
+
+climate:
+  name: Device Climate
+  view: yes
+  entities:
+    - history_graph.2_hour_room_temperature
+    - sensor.heating_kitchen_energy
+    - sensor.heating_livingroom_energy
+    - sensor.heating_livingroom_oil_energy
+    - sensor.heating_office_energy
+    - group.house_heaters
+    - climate.kitchen
+    - climate.livingroom
+    - climate.livingroom_oil
+    - climate.office
+    - sensor.sensor_kitchen_battery
+    - sensor.sensor_office_battery
+    - group.temperatures
+
+house_heaters:
+  name: House heaters
+  view: no
+  entities:
+    - switch.heating_kitchen_switch
+    - switch.heating_livingroom_switch
+    - switch.heating_livingroom_oil_switch
+    - switch.heating_office_switch
+
+routers:
+  name: Routers
+  view: no
+  entities:
+    - device_tracker.fredro1
+    - device_tracker.fredro2
+    - device_tracker.fredro3
+
+devices:
+  view: yes
+#  icon: mdi:home
+  entities:
+    - device_tracker.fredrik_android
+    - device_tracker.fredrik_iphone
+    - device_tracker.samsungtab
+    - input_number.battery_alert_threshold_max
+    - input_number.battery_alert_threshold_min
+    - sensor.alarm_smokesensor_battery
+    - sensor.door_bathroom_battery
+    - sensor.door_main_battery
+    - sensor.sensor_kitchen_battery
+    - sensor.sensor_motion_bathroom_battery
+    - sensor.sensor_office_battery
+    - sensor.switch_hall_battery
+    - sensor.switch_masterbedroom_battery
+    - group.nas_sensors
+
+nas_sensors:
+  name: NAS Sensors
+  view: no
+  entities:
+    - sensor.frednas2_system_temperature
+    - sensor.frednas2_cpu_temperature
+    - sensor.frednas2_cpu_usage
+    - sensor.frednas2_volume_used_datavol1
+    - sensor.frednas2_memory_usage
+
+media_players:
+  view: yes
+  name: Media Players
+  entities:
+    - group.audio_players
+    - group.video_players
+    - group.residence_radio
+  
+video_players:
+  view: no
+  name: Video Players
+  entities:
+    - media_player.kodi
+    - media_player.tvbedroom
+    - media_player.tvlivingroom
+    - media_player.samsung_tv_remote
+
+audio_players:
+  view: no
+  name: Audio Players
+  entities:
+    - media_player.audiobedroom
+    - media_player.audiobathroom
+    - media_player.audiolivingroom
+    - media_player.audioeverywhere
+    - media_player.spotify
+
+Residence Radio:
+  name: Residence Radio
+  entities:
+    - input_select.radio_station
+    - input_select.chromecast_radio
+    - script.radio_nrk
+    - input_number.volume_receiver
+  
+bathroom_lights:
+  view: no
+  name: Bathroom lights
+  entities:
+    - switch.light_bath_switch
+    - switch.light_toilet_switch
+    - binary_sensor.door_bathroom_sensor
+    - binary_sensor.sensor_motion_bathroom_sensor
+    - sensor.sensor_motion_bathroom_battery
+    - sensor.door_bathroom_battery
+
+kitchen_sensors:
+  name: Kitchen Sensors
+  view: no
+  entities:
+    - binary_sensor.sensor_kitchen_sensor
+    - sensor.sensor_kitchen_luminance
+    - sensor.sensor_kitchen_temperature
+    - sensor.sensor_kitchen_alarm_level
+    - sensor.sensor_kitchen_alarm_type
+    - sensor.sensor_kitchen_burglar
+    - sensor.sensor_kitchen_sourcenodeid
+    - sensor.sensor_kitchen_battery
+
+office_sensors:
+  name: Office Sensors
+  view: no
+  entities:
+    - binary_sensor.sensor_office_sensor
+    - sensor.sensor_office_luminance
+    - sensor.sensor_office_temperature
+    - sensor.sensor_office_alarm_level
+    - sensor.sensor_office_alarm_type
+    - sensor.sensor_office_burglar
+    - sensor.sensor_office_sourcenodeid
+    - sensor.sensor_office_battery
+
+hall_lights:
+  name: Hall lights
+  view: no
+  entities:
+    - light.light_hallway_level
+    - sensor.switch_hall_battery
+    - sensor.door_main_battery
+
+livingroom_lights:
+  name: Livingroom lights
+  view: no
+  entities:
+    - switch.light_livingroom_motherdaughter_switch
+    - light.light_livingroom_aroundtv_level
+    - light.light_livingroom_diningroom_level
+
+master_bedroom_lights:
+  name: Master bedroom lights
+  view: no
+  entities:
+    - light.light_masterbedroom_level
+    - sensor.switch_masterbedroom_battery
+
+office_lights:
+  view: no
+  name: Office lights
+  entities:
+    - light.light_office_level
+
+smoke_alarm:
+  name: Smoke Alarm
+  view: yes
+  entities:
+    - binary_sensor.alarm_smokesensor_sensor
+    - sensor.alarm_smokesensor_alarm_level
+    - sensor.alarm_smokesensor_alarm_type
+    - sensor.alarm_smokesensor_battery
+    - sensor.alarm_smokesensor_smoke
+    - sensor.alarm_smokesensor_sourcenodeid
+
+temperatures:
+  name: Temperatures
+  view: no
+  entities:
+    - sensor.weather_temperature
+    - sensor.outside_balcony
+    - sensor.inside_livingroom
+    - sensor.sensor_kitchen_temperature
+    - sensor.sensor_office_temperature
+    - history_graph.temperature
+    - light.light__level
+
+tracker:
+  name: Device Tracker 
+  view: no
+  entities:
+    - device_tracker.fredrik_android

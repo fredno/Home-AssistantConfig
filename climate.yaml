@@ -1,0 +1,43 @@
+- platform: generic_thermostat
+  name: Kitchen
+  heater: switch.heating_kitchen_switch
+  target_sensor: sensor.sensor_kitchen_temperature
+  min_temp: 10
+  max_temp: 30
+  min_cycle_duration:
+    minutes: 3
+  cold_tolerance: 0.25
+  away_temp: 15
+
+- platform: generic_thermostat
+  name: Livingroom
+  heater: switch.heating_livingroom_switch
+  target_sensor: sensor.inside_livingroom
+  min_temp: 10
+  max_temp: 30
+  min_cycle_duration:
+    minutes: 3
+  cold_tolerance: 0.25
+  away_temp: 15
+
+- platform: generic_thermostat
+  name: Livingroom oil
+  heater: switch.heating_livingroom_oil_switch
+  target_sensor: sensor.inside_livingroom
+  min_temp: 10
+  max_temp: 30
+  min_cycle_duration:
+    minutes: 3
+  cold_tolerance: 0.25
+  away_temp: 15
+
+- platform: generic_thermostat
+  name: Office
+  heater: switch.heating_office_switch
+  target_sensor: sensor.sensor_office_temperature
+  min_temp: 10
+  max_temp: 30
+  min_cycle_duration:
+    minutes: 3
+  cold_tolerance: 0.25
+  away_temp: 15

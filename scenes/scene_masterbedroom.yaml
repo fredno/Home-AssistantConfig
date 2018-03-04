@@ -1,0 +1,16 @@
+#################################################
+# here's the scene that gets called. Lights in 
+# my living room and kitchen turn on.
+#################################################
+
+
+- name: Master bedroom lights On
+  entities:
+    group.master_bedroom_lights:
+      state: on
+
+- name: Master bedroom lights Off
+  entities:
+    group.master_bedroom_lights:
+      state: off
+

@@ -1,0 +1,506 @@
+- action:
+  - data:
+      entity_id: scene.hallway_lights_on, scene.livingroom_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '23'
+    service: climate.set_temperature
+  alias: Fredrik are home
+  condition:
+  - after: 06:00:00
+    before: '23:59:59'
+    condition: time
+  id: '1519920314308'
+  trigger:
+  - entity_id: group.tracker
+    from: not_home
+    platform: state
+    to: home
+- action:
+  - data:
+      entity_id: scene.bath_lights_off, light.light_livingroom_aroundtv_level, scene.hallway_lights_off,
+        scene.livingroom_lights_off, scene.master_bedroom_lights_off, scene.office_lights_off
+    service: scene.turn_on
+  - data:
+      entity_id: media_player.audiobedroom, media_player.audiolivingroom, media_player.audioeverywhere,
+        media_player.kodi, media_player.tvbedroom, media_player.tvlivingroom
+    service: media_player.media_stop
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '18'
+    service: climate.set_temperature
+  alias: Fredrik left the building
+  condition: []
+  id: '1519922526931'
+  trigger:
+  - entity_id: group.tracker
+    from: home
+    platform: state
+    to: not_home
+- action:
+  - data:
+      entity_id: scene.hallway_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: scene.livingroom_lights_on
+    service: scene.turn_on
+  alias: Button Single top left
+  condition: []
+  id: '1519925291181'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 10
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 10
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Hold top left
+  condition: []
+  id: '1519925291182'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 12
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 12
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Dobble top left
+  condition: []
+  id: '1519925291183'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 13
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 13
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Single bottom left
+  condition: []
+  id: '1519925291184'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 20
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 20
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Hold bottom left
+  condition: []
+  id: '1519925291185'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 22
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 22
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Dobble bottom left
+  condition: []
+  id: '1519925291186'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 23
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 23
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      brightness_pct: '50'
+      entity_id: light.light_livingroom_diningroom_level
+    service: light.turn_on
+  - delay: 00:05:00
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.turn_off
+  alias: Button Single top right
+  condition: []
+  id: '1519925291187'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 30
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 30
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Hold top right
+  condition: []
+  id: '1519925291188'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 32
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 32
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Dobble top right
+  condition: []
+  id: '1519925291189'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 33
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 33
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: scene.livingroom_lights_off
+    service: scene.turn_on
+  - alias: ''
+    data:
+      entity_id: scene.master_bedroom_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: scene.hallway_lights_off
+    service: scene.turn_on
+  alias: Button Single bottom right
+  condition: []
+  id: '1519925291190'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 40
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 40
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Hold bottom right
+  condition: []
+  id: '1519925291191'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 42
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 42
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.toggle
+  alias: Button Dobble bottom right
+  condition: []
+  id: '1519925291192'
+  trigger:
+  - event_data:
+      entity_id: zwave.switch_hall
+      scene_id: 43
+    event_type: zwave.scene_activated
+    platform: event
+  - event_data:
+      entity_id: zwave.switch_masterbedroom
+      scene_id: 43
+    event_type: zwave.scene_activated
+    platform: event
+- action:
+  - data:
+      entity_id: scene.bath_lights_on
+    service: scene.turn_on
+  alias: Bathroom Lights Auto movments
+  condition: []
+  id: '1519930017303'
+  trigger:
+  - entity_id: binary_sensor.sensor_motion_bathroom_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      entity_id: light.light_hallway_level
+    service: homeassistant.turn_on
+  - data:
+      entity_id: light.light_livingroom_diningroom_level
+    service: homeassistant.turn_on
+  alias: Main door open
+  condition:
+  - condition: state
+    entity_id: group.tracker
+    state: not_home
+  id: '1519931546889'
+  trigger:
+  - entity_id: binary_sensor.door_main_sensor
+    platform: state
+    to: 'on'
+- action:
+  - delay: 00:10:00
+  - data:
+      entity_id: scene.master_bedroom_lights_off
+    service: scene.turn_on
+  alias: Master Bedroom Lights Auto off 10 Minutes
+  condition: []
+  id: '1519932386046'
+  trigger:
+  - entity_id: group.master_bedroom_lights
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      entity_id: scene.bath_lights_on
+    service: scene.turn_on
+  alias: Bathroom door open
+  condition: []
+  id: '1519935968966'
+  trigger:
+  - entity_id: binary_sensor.door_bathroom_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - delay: 00:10:00
+  - data:
+      entity_id: scene.bath_lights_off
+    service: scene.turn_on
+  alias: Bathroom Light Auto no more movment
+  condition: []
+  id: '1519938275841'
+  trigger:
+  - entity_id: binary_sensor.sensor_motion_bathroom_sensor
+    from: 'on'
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      input_select.chromecast_radio: Everywhere
+      input_select.radio_station: NRK P13
+    service: script.radio_nrk
+  - data:
+      entity_id: scene.good_morning
+    service: scene.turn_on
+  alias: Audio Wakeup and play NRK P13
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  id: '1519939501657'
+  trigger:
+  - at: 07:14:00
+    platform: time
+- action:
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '18'
+    service: climate.set_temperature
+  alias: Climate night
+  condition:
+  - condition: state
+    entity_id: group.tracker
+    state: home
+  id: '1520008654280'
+  trigger:
+  - at: 00:30:00
+    platform: time
+- action:
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '20'
+    service: climate.set_temperature
+  alias: Climate week 1 morning
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: group.tracker
+    state: home
+  id: '1520008654290'
+  trigger:
+  - at: 06:00:00
+    platform: time
+- action:
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '18'
+    service: climate.set_temperature
+  alias: Climate week 2 day
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: group.tracker
+    state: not_home
+  id: '1520008654300'
+  trigger:
+  - at: 08:00:00
+    platform: time
+- action:
+  - data:
+      entity_id: climate.kitchen, climate.livingroom, climate.livingroom_oil
+      operation_mode: Heat
+      temperature: '24'
+    service: climate.set_temperature
+  - alias: ''
+    data:
+      entity_id: climate.office
+      operation_mode: Heat
+      temperature: '20'
+    service: climate.set_temperature
+  alias: Climate weekend 1 day
+  condition:
+  - condition: time
+    weekday:
+    - sat
+    - sun
+  - condition: state
+    entity_id: group.tracker
+    state: home
+  id: '1520008654310'
+  trigger:
+  - at: 08:00:00
+    platform: time
+- action:
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '20'
+    service: climate.set_temperature
+  alias: Climate week 3 evening
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: group.tracker
+    state: not_home
+  id: '1520008654330'
+  trigger:
+  - at: '15:00:00'
+    platform: time
+- action:
+  - data:
+      entity_id: media_player.receiver
+    service: media_player.turn_on
+  - delay: 00:00:02
+  - data:
+      entity_id: media_player.receiver
+      volume_level: '0.7'
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.receiver
+      source: AUDIO
+    service: media_player.select_source
+  - data:
+      entity_id: media_player.samsung_tv_remote
+    service: media_player.turn_off
+  alias: AudioLivingroom change source
+  condition:
+  - condition: state
+    entity_id: group.tracker
+    state: home
+  id: '1520081152570'
+  trigger:
+  - entity_id: media_player.audiolivingroom
+    platform: state
+    to: playing
+  - entity_id: media_player.audioeverywhere
+    platform: state
+    to: playing
+- action:
+  - data_template:
+      entity_id: media_player.receiver
+      volume_level: '{{trigger.to_state.state}}'
+    service: media_player.volume_set
+  alias: Audio livingroom - Adjust Volume
+  condition: []
+  id: '1520155902013'
+  trigger:
+  - entity_id: input_number.volume_receiver
+    platform: state
