@@ -9,6 +9,8 @@
 #      state: on
     switch.light_livingroom_motherdaughter_switch:
       state: on
+    switch.telldus_tzwp100_plugin_switch_switch:
+      state: on
     light.light_livingroom_aroundtv_level:
       state: on
     light.light_livingroom_diningroom_level:
@@ -21,6 +23,8 @@
 #    group.livingroom_lights:
 #      state: off
     switch.light_livingroom_motherdaughter_switch:
+      state: off
+    switch.telldus_tzwp100_plugin_switch_switch:
       state: off
     light.light_livingroom_diningroom_level:
       state: off

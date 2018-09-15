@@ -28,12 +28,14 @@
   username: !secret qnap-username
   password: !secret qnap-password
   monitored_conditions:
+#    - drive_temp
+#    - drive_smart_status
     - status
     - system_temp
     - cpu_temp
     - cpu_usage
     - memory_percent_used
-    - volume_percentage_used
+#    - volume_percentage_used
 
 #- platform: template
 #  sensors:

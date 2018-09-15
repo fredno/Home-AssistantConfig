@@ -34,3 +34,20 @@ gr4:
     - sensor.sensor_office_temperature
   hours_to_show: 2
   refresh: 60
+gr5:
+  name: 2 days Outside Temperature
+  entities:
+    - sensor.outside_balcony
+    - sensor.weather_temperature
+  hours_to_show: 48
+  refresh: 60
+
+gr6:
+  name: 2 days Inside Temperature
+  entities:
+    - sensor.inside_livingroom
+    - sensor.sensor_kitchen_temperature
+    - sensor.sensor_office_temperature
+  hours_to_show: 48
+  refresh: 60
+

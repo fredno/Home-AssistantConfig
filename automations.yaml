@@ -1,27 +1,40 @@
-- action:
-  - data:
-      entity_id: scene.hallway_lights_on, scene.livingroom_lights_on
-    service: scene.turn_on
-  - data:
-      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
-      operation_mode: Heat
-      temperature: '23'
-    service: climate.set_temperature
+- id: '1519920314308'
   alias: Fredrik are home
-  condition:
-  - after: 06:00:00
-    before: '23:59:59'
-    condition: time
-  id: '1519920314308'
   trigger:
   - entity_id: group.tracker
     from: not_home
     platform: state
     to: home
-- action:
+  condition:
+    condition: or
+    conditions:
+    - after: 06:00:00
+      before: '23:59:59'
+      condition: time
+    - after: 00:00:00
+      before: 02:00:00
+      condition: time
+  action:
   - data:
-      entity_id: scene.bath_lights_off, light.light_livingroom_aroundtv_level, scene.hallway_lights_off,
-        scene.livingroom_lights_off, scene.master_bedroom_lights_off, scene.office_lights_off
+      entity_id: scene.hallway_lights_on, scene.livingroom_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen
+      hold_mode: home
+      temperature: '20'
+    service: climate.set_temperature
+- id: '1519922526931'
+  alias: Fredrik left the building
+  trigger:
+  - entity_id: group.tracker
+    from: home
+    platform: state
+    to: not_home
+  condition: []
+  action:
+  - data:
+      entity_id: scene.bath_lights_off, scene.hallway_lights_off, scene.livingroom_lights_off,
+        scene.master_bedroom_lights_off, scene.office_lights_off
     service: scene.turn_on
   - data:
       entity_id: media_player.audiobedroom, media_player.audiolivingroom, media_player.audioeverywhere,
@@ -29,27 +42,12 @@
     service: media_player.media_stop
   - data:
       entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
-      operation_mode: Heat
-      temperature: '18'
+      hold_mode: away
+      operation_mode: Away
+      temperature: '16'
     service: climate.set_temperature
-  alias: Fredrik left the building
-  condition: []
-  id: '1519922526931'
-  trigger:
-  - entity_id: group.tracker
-    from: home
-    platform: state
-    to: not_home
-- action:
-  - data:
-      entity_id: scene.hallway_lights_on
-    service: scene.turn_on
-  - data:
-      entity_id: scene.livingroom_lights_on
-    service: scene.turn_on
+- id: '1519925291181'
   alias: Button Single top left
-  condition: []
-  id: '1519925291181'
   trigger:
   - event_data:
       entity_id: zwave.switch_hall
@@ -61,6 +59,14 @@
       scene_id: 10
     event_type: zwave.scene_activated
     platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.hallway_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: scene.livingroom_lights_on
+    service: scene.turn_on
 - action:
   - data:
       entity_id: light.light_livingroom_diningroom_level
@@ -97,24 +103,24 @@
       scene_id: 13
     event_type: zwave.scene_activated
     platform: event
-- action:
-  - data:
-      entity_id: light.light_livingroom_diningroom_level
-    service: homeassistant.toggle
+- id: '1519925291184'
   alias: Button Single bottom left
-  condition: []
-  id: '1519925291184'
   trigger:
   - event_data:
       entity_id: zwave.switch_hall
-      scene_id: 20
+      scene_id: 30
     event_type: zwave.scene_activated
     platform: event
   - event_data:
       entity_id: zwave.switch_masterbedroom
-      scene_id: 20
+      scene_id: 30
     event_type: zwave.scene_activated
     platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: automation.audio_wakeup_and_play_nrk_p13
+    service: automation.trigger
 - action:
   - data:
       entity_id: light.light_livingroom_diningroom_level
@@ -151,29 +157,31 @@
       scene_id: 23
     event_type: zwave.scene_activated
     platform: event
-- action:
-  - data:
-      brightness_pct: '50'
-      entity_id: light.light_livingroom_diningroom_level
-    service: light.turn_on
-  - delay: 00:05:00
-  - data:
-      entity_id: light.light_livingroom_diningroom_level
-    service: homeassistant.turn_off
+- id: '1519925291187'
   alias: Button Single top right
-  condition: []
-  id: '1519925291187'
   trigger:
   - event_data:
       entity_id: zwave.switch_hall
-      scene_id: 30
+      scene_id: 20
     event_type: zwave.scene_activated
     platform: event
   - event_data:
       entity_id: zwave.switch_masterbedroom
-      scene_id: 30
+      scene_id: 20
     event_type: zwave.scene_activated
     platform: event
+  condition: []
+  action:
+  - data:
+      brightness_pct: '50'
+      entity_id: light.light_livingroom_diningroom_level, switch.light_bath_switch,
+        switch.light_toilet_switch
+    service: light.turn_on
+  - delay: 00:05:00
+  - data:
+      entity_id: light.light_livingroom_diningroom_level, switch.light_bath_switch,
+        switch.light_toilet_switch
+    service: homeassistant.turn_off
 - action:
   - data:
       entity_id: light.light_livingroom_diningroom_level
@@ -210,20 +218,8 @@
       scene_id: 33
     event_type: zwave.scene_activated
     platform: event
-- action:
-  - data:
-      entity_id: scene.livingroom_lights_off
-    service: scene.turn_on
-  - alias: ''
-    data:
-      entity_id: scene.master_bedroom_lights_on
-    service: scene.turn_on
-  - data:
-      entity_id: scene.hallway_lights_off
-    service: scene.turn_on
+- id: '1519925291190'
   alias: Button Single bottom right
-  condition: []
-  id: '1519925291190'
   trigger:
   - event_data:
       entity_id: zwave.switch_hall
@@ -235,6 +231,33 @@
       scene_id: 40
     event_type: zwave.scene_activated
     platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.livingroom_lights_off
+    service: scene.turn_on
+  - alias: ''
+    data:
+      entity_id: scene.master_bedroom_lights_on
+    service: scene.turn_on
+  - data:
+      entity_id: scene.hallway_lights_off
+    service: scene.turn_on
+  - data:
+      entity_id: scene.bathroom_lights_off
+    service: scene.turn_on
+  - alias: ''
+    data:
+      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      operation_mode: Heat
+      temperature: '18'
+    service: climate.set_temperature
+  - data:
+      entity_id: scene.office_lights_off
+    service: scene.turn_on
+  - data:
+      entity_id: scene.bath_lights_off
+    service: scene.turn_on
 - action:
   - data:
       entity_id: light.light_livingroom_diningroom_level
@@ -271,18 +294,18 @@
       scene_id: 43
     event_type: zwave.scene_activated
     platform: event
-- action:
-  - data:
-      entity_id: scene.bath_lights_on
-    service: scene.turn_on
+- id: '1519930017303'
   alias: Bathroom Lights Auto movments
-  condition: []
-  id: '1519930017303'
   trigger:
   - entity_id: binary_sensor.sensor_motion_bathroom_sensor
     from: 'off'
     platform: state
     to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: scene.bath_lights_on
+    service: scene.turn_on
 - action:
   - data:
       entity_id: light.light_hallway_level
@@ -300,43 +323,43 @@
   - entity_id: binary_sensor.door_main_sensor
     platform: state
     to: 'on'
-- action:
-  - delay: 00:10:00
-  - data:
-      entity_id: scene.master_bedroom_lights_off
-    service: scene.turn_on
-  alias: Master Bedroom Lights Auto off 10 Minutes
-  condition: []
-  id: '1519932386046'
+- id: '1519932386046'
+  alias: Master Bedroom Lights Auto off 5 Minutes
   trigger:
   - entity_id: group.master_bedroom_lights
     platform: state
     to: 'on'
-- action:
-  - data:
-      entity_id: scene.bath_lights_on
-    service: scene.turn_on
-  alias: Bathroom door open
   condition: []
-  id: '1519935968966'
+  action:
+  - delay: 00:05:00
+  - data:
+      entity_id: scene.master_bedroom_lights_off
+    service: scene.turn_on
+- id: '1519935968966'
+  alias: Bathroom door open
   trigger:
   - entity_id: binary_sensor.door_bathroom_sensor
     from: 'off'
     platform: state
     to: 'on'
-- action:
-  - delay: 00:10:00
-  - data:
-      entity_id: scene.bath_lights_off
-    service: scene.turn_on
-  alias: Bathroom Light Auto no more movment
   condition: []
-  id: '1519938275841'
+  action:
+  - data:
+      entity_id: scene.bath_lights_on
+    service: scene.turn_on
+- id: '1519938275841'
+  alias: Bathroom Light Auto no more movment
   trigger:
   - entity_id: binary_sensor.sensor_motion_bathroom_sensor
     from: 'on'
     platform: state
     to: 'off'
+  condition: []
+  action:
+  - delay: 00:40:00
+  - data:
+      entity_id: scene.bath_lights_off
+    service: scene.turn_on
 - action:
   - data:
       input_select.chromecast_radio: Everywhere
@@ -362,7 +385,7 @@
   - data:
       entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
       operation_mode: Heat
-      temperature: '18'
+      temperature: '16'
     service: climate.set_temperature
   alias: Climate night
   condition:
@@ -375,9 +398,9 @@
     platform: time
 - action:
   - data:
-      entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
+      entity_id: climate.livingroom, climate.livingroom_oil
       operation_mode: Heat
-      temperature: '20'
+      temperature: '16'
     service: climate.set_temperature
   alias: Climate week 1 morning
   condition:
@@ -399,7 +422,7 @@
   - data:
       entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
       operation_mode: Heat
-      temperature: '18'
+      temperature: '16'
     service: climate.set_temperature
   alias: Climate week 2 day
   condition:
@@ -421,13 +444,13 @@
   - data:
       entity_id: climate.kitchen, climate.livingroom, climate.livingroom_oil
       operation_mode: Heat
-      temperature: '24'
+      temperature: '16'
     service: climate.set_temperature
   - alias: ''
     data:
       entity_id: climate.office
       operation_mode: Heat
-      temperature: '20'
+      temperature: '16'
     service: climate.set_temperature
   alias: Climate weekend 1 day
   condition:
@@ -446,7 +469,7 @@
   - data:
       entity_id: climate.livingroom, climate.livingroom_oil, climate.kitchen, climate.office
       operation_mode: Heat
-      temperature: '20'
+      temperature: '16'
     service: climate.set_temperature
   alias: Climate week 3 evening
   condition:
@@ -504,3 +527,26 @@
   trigger:
   - entity_id: input_number.volume_receiver
     platform: state
+- action:
+  - service: homeassistant.restart
+  alias: Restart at 04:15
+  condition: []
+  id: '1521671013974'
+  trigger:
+  - at: 04:15:00
+    platform: time
+- id: '1529332599402'
+  alias: KODI Change source
+  trigger:
+  - entity_id: media_player.receiver
+    platform: state
+    to: HDMI2
+  condition:
+  - condition: state
+    entity_id: group.tracker
+    state: home
+  action:
+  - alias: ''
+    data:
+      entity_id: media_player.samsung_tv_remote
+    service: media_player.turn_on

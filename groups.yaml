@@ -1,16 +1,17 @@
+##############################################################################
+# TAB's                                                                      #
+##############################################################################
 default_view:
   name: "Home"
   view: yes
   icon: mdi:home 
   entities:
-    - group.bathroom_lights
-    - group.livingroom_lights
+    - group.bathroom
+    - group.livingroom
     - group.master_bedroom_lights
     - group.hall_lights
-    - group.office_lights
-    - group.routers
-    - group.nas_sensors
-#    - group.devices
+    - group.office
+    - group.kitchen
     - device_tracker.fredrik_android
     - device_tracker.fredrik_iphone
     - device_tracker.samsungtab
@@ -18,20 +19,68 @@ default_view:
 climate:
   name: Device Climate
   view: yes
+  icon: mdi:weather-cloudy
   entities:
-    - history_graph.2_hour_room_temperature
+    - history_graph.2_days_inside_temperature
+    - history_graph.2_days_outside_temperature
     - sensor.heating_kitchen_energy
     - sensor.heating_livingroom_energy
     - sensor.heating_livingroom_oil_energy
     - sensor.heating_office_energy
+    - sensor.outside_balcony
+    - sensor.inside_livingroom
+    - sensor.sensor_kitchen_temperature
+    - sensor.sensor_office_temperature
     - group.house_heaters
     - climate.kitchen
     - climate.livingroom
     - climate.livingroom_oil
     - climate.office
+
+devices:
+  view: yes
+  name: Nas and other devices
+  icon: mdi:nas
+  entities:
+    - device_tracker.fredrik_android
+    - device_tracker.fredrik_iphone
+    - device_tracker.samsungtab
+    - input_number.battery_alert_threshold_max
+    - input_number.battery_alert_threshold_min
+    - sensor.alarm_smokesensor_battery
+    - sensor.door_bathroom_battery
+    - sensor.door_main_battery
     - sensor.sensor_kitchen_battery
+    - sensor.sensor_motion_bathroom_battery
     - sensor.sensor_office_battery
-    - group.temperatures
+    - sensor.switch_hall_battery
+    - sensor.switch_masterbedroom_battery
+    - group.nas_sensors
+
+media_players:
+  view: yes
+  name: Media Players
+  icon: mdi:folder-multiple-image
+  entities:
+    - group.audio_players
+    - group.video_players
+    - group.residence_radio
+
+smoke_alarm:
+  name: Smoke Alarm
+  view: yes
+  icon: mdi:alarm-light
+  entities:
+    - binary_sensor.alarm_smokesensor_sensor
+    - sensor.alarm_smokesensor_alarm_level
+    - sensor.alarm_smokesensor_alarm_type
+    - sensor.alarm_smokesensor_battery
+    - sensor.alarm_smokesensor_smoke
+    - sensor.alarm_smokesensor_sourcenodeid
+
+##############################################################################
+# Groups                                                                     #
+##############################################################################
 
 house_heaters:
   name: House heaters
@@ -50,25 +99,6 @@ routers:
     - device_tracker.fredro2
     - device_tracker.fredro3
 
-devices:
-  view: yes
-#  icon: mdi:home
-  entities:
-    - device_tracker.fredrik_android
-    - device_tracker.fredrik_iphone
-    - device_tracker.samsungtab
-    - input_number.battery_alert_threshold_max
-    - input_number.battery_alert_threshold_min
-    - sensor.alarm_smokesensor_battery
-    - sensor.door_bathroom_battery
-    - sensor.door_main_battery
-    - sensor.sensor_kitchen_battery
-    - sensor.sensor_motion_bathroom_battery
-    - sensor.sensor_office_battery
-    - sensor.switch_hall_battery
-    - sensor.switch_masterbedroom_battery
-    - group.nas_sensors
-
 nas_sensors:
   name: NAS Sensors
   view: no
@@ -79,14 +109,6 @@ nas_sensors:
     - sensor.frednas2_volume_used_datavol1
     - sensor.frednas2_memory_usage
 
-media_players:
-  view: yes
-  name: Media Players
-  entities:
-    - group.audio_players
-    - group.video_players
-    - group.residence_radio
-  
 video_players:
   view: no
   name: Video Players
@@ -114,9 +136,9 @@ Residence Radio:
     - script.radio_nrk
     - input_number.volume_receiver
   
-bathroom_lights:
+bathroom:
   view: no
-  name: Bathroom lights
+  name: Bathroom
   entities:
     - switch.light_bath_switch
     - switch.light_toilet_switch
@@ -124,19 +146,6 @@ bathroom_lights:
     - binary_sensor.sensor_motion_bathroom_sensor
     - sensor.sensor_motion_bathroom_battery
     - sensor.door_bathroom_battery
-
-kitchen_sensors:
-  name: Kitchen Sensors
-  view: no
-  entities:
-    - binary_sensor.sensor_kitchen_sensor
-    - sensor.sensor_kitchen_luminance
-    - sensor.sensor_kitchen_temperature
-    - sensor.sensor_kitchen_alarm_level
-    - sensor.sensor_kitchen_alarm_type
-    - sensor.sensor_kitchen_burglar
-    - sensor.sensor_kitchen_sourcenodeid
-    - sensor.sensor_kitchen_battery
 
 office_sensors:
   name: Office Sensors
@@ -159,13 +168,17 @@ hall_lights:
     - sensor.switch_hall_battery
     - sensor.door_main_battery
 
-livingroom_lights:
-  name: Livingroom lights
+livingroom:
+  name: Livingroom
   view: no
   entities:
     - switch.light_livingroom_motherdaughter_switch
+    - switch.light_livingroom_aroundtv2_switch
+    - switch.telldus_tzwp100_plugin_switch_switch
     - light.light_livingroom_aroundtv_level
     - light.light_livingroom_diningroom_level
+    - climate.livingroom
+    - climate.livingroom_oil
 
 master_bedroom_lights:
   name: Master bedroom lights
@@ -174,22 +187,30 @@ master_bedroom_lights:
     - light.light_masterbedroom_level
     - sensor.switch_masterbedroom_battery
 
-office_lights:
+office:
   view: no
-  name: Office lights
+  name: Office
   entities:
+    - switch.heating_office_switch
     - light.light_office_level
+    - binary_sensor.sensor_office_sensor
+    - sensor.sensor_office_luminance
+    - sensor.sensor_office_temperature
+    - sensor.sensor_office_battery
+    - climate.office
 
-smoke_alarm:
-  name: Smoke Alarm
-  view: yes
+kitchen:
+  view: no
+  name: Kitchen
   entities:
-    - binary_sensor.alarm_smokesensor_sensor
-    - sensor.alarm_smokesensor_alarm_level
-    - sensor.alarm_smokesensor_alarm_type
-    - sensor.alarm_smokesensor_battery
-    - sensor.alarm_smokesensor_smoke
-    - sensor.alarm_smokesensor_sourcenodeid
+    - switch.heating_kitchen_switch
+    - light.light_kitchen_level
+    - light.kitchen
+    - binary_sensor.sensor_kitchen_sensor
+    - sensor.sensor_kitchen_luminance
+    - sensor.sensor_kitchen_temperature
+    - sensor.sensor_kitchen_battery
+    - climate.kitchen
 
 temperatures:
   name: Temperatures

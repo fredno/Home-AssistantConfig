@@ -56,3 +56,7 @@ sensor.switch_hall_battery:
   friendly_name: Battery bryter gang
 sensor.switch_masterbedroom_battery:
   friendly_name: Battery bryter soverom
+switch.telldus_tzwp100_plugin_switch_switch:
+  friendly_name: light_livingroom_aroundTV
+zwave.telldus_tzwp100_plugin_switch:
+  friendly_name: light.light_livingroom_aroundtv

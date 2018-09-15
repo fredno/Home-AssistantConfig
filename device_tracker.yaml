@@ -4,5 +4,18 @@
   consider_home: 300
   #interval_seconds: 60
   exclude:
+    - 192.168.2.11
+    - 192.168.2.14
     - 192.168.2.31
+    - 192.168.2.41
+    - 192.168.2.42
+    - 192.168.2.43
     - 192.168.2.50
+
+- platform: ping
+  hosts:
+    FREDNAS1: 192.168.2.11
+    FREDNAS2: 192.168.2.14
+    fredrik_android: 192.168.2.41
+    fredrik_iphone: 192.168.2.43
+    samsungtab: 192.168.2.42

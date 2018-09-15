@@ -22,13 +22,13 @@ config:
 
 # Z-wave
 zwave:
-  #usb_path: /dev/ttyACM0
+  #usb_path: /dev/ttyACM1
   usb_path: /dev/serial/by-id/usb-0658_0200-if00
   network_key: !secret zwave-network_key
 
 http:
   # Secrets are defined in the file secrets.yaml
-  api_password: !secret http-password
+  # api_password: !secret http-password
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   base_url: !secret http-base_url
 
@@ -74,6 +74,8 @@ recorder:
 # Include customization files
 automation: !include automations.yaml
 
+binary_sensor: !include binary_sensor.yaml
+
 climate: !include climate.yaml
 
 device_tracker: !include device_tracker.yaml
@@ -96,3 +98,7 @@ script: !include scripts.yaml
 # Include folder scene
 #-------------------------------------------
 scene: !include_dir_merge_list scenes
+
+camera:
+  - platform: local_file
+    file_path: /home/homeassistant/.homeassistant/www/image.png

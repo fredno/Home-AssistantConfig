@@ -3,33 +3,33 @@ radio_nrk:
   sequence:
   - data:
       entity_id: media_player.audiobedroom
-      volume_level: '0.35'
+      volume_level: '0.40'
     service: media_player.volume_set
   - data:
       entity_id: media_player.audiobathroom
-      volume_level: '0.50'
+      volume_level: '0.60'
     service: media_player.volume_set
   - data:
       entity_id: media_player.audiolivingroom
       volume_level: '0.50'
     service: media_player.volume_set
   - data_template:
-      entity_id: '{% if is_state("input_select.chromecast_radio", "Livingroom") %}
-        media_player.audiolivingroom {% elif is_state("input_select.chromecast_radio",
+      entity_id: '{% if is_state("input_select.chromecast_radio", 
+        "Livingroom") %} media_player.audiolivingroom {% elif is_state("input_select.chromecast_radio",
         "Bedroom") %} media_player.audiobedroom {% elif is_state("input_select.chromecast_radio",
         "Bathroom") %} media_player.audiobathroom {% elif is_state("input_select.chromecast_radio",
-        "Not In use") %} media_player.not_in_use 
-        {% elif is_state("input_select.chromecast_radio","Everywhere") %} media_player.audioeverywhere 
-		{% endif %}
+        "Not In use") %} media_player.not_in_use {% elif is_state("input_select.chromecast_radio",
+        "Everywhere") %} media_player.audioeverywhere 
+        {% endif %}
 
         '
-      media_content_id: '{% if is_state("input_select.radio_station", "NRK P1") %}
-        http://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_mp3_h {% elif is_state("input_select.radio_station",
+      media_content_id: '{% if is_state("input_select.radio_station", 
+        "NRK P1") %} http://lyd.nrk.no/nrk_radio_p1_ostlandssendingen_mp3_h {% elif is_state("input_select.radio_station",
         "NRK P2") %} http://lyd.nrk.no/nrk_radio_p2_mp3_h {% elif is_state("input_select.radio_station",
-        "NRK P3") %} http://lyd.nrk.no/nrk_radio_p3_mp3_h 
-        {% elif is_state("input_select.radio_station", "NRK P13") %} http://lyd.nrk.no/nrk_radio_p13_aac_h 
-        {% elif is_state("input_select.radio_station", "Radio Rock") %} http://stream.bauermedia.no:80/radiorock.mp3
-		{% endif %}
+        "NRK P3") %} http://lyd.nrk.no/nrk_radio_p3_mp3_h {% elif is_state("input_select.radio_station", 
+        "NRK P13") %} http://lyd.nrk.no/nrk_radio_p13_aac_h {% elif is_state("input_select.radio_station", 
+        "Radio Rock") %} http://stream.bauermedia.no:80/radiorock.mp3
+        {% endif %}
 
         '
       media_content_type: audio/mp4

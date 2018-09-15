@@ -7,6 +7,8 @@
   entities:
     switch.light_livingroom_motherdaughter_switch:
       state: on
+    switch.light_livingroom_aroundtv2_switch:
+      state: on
     light.light_livingroom_aroundtv_level:
       state: on
     light.light_livingroom_diningroom_level:

@@ -1,0 +1,11 @@
+- platform: ping
+  host: 192.168.2.41
+  count: 1
+#  scan_interval: 30
+- platform: ping
+  host: 192.168.2.42
+  count: 1
+- platform: ping
+  host: 192.168.2.43
+  count: 1
+

@@ -6,11 +6,11 @@
 
 - name: Bath lights On
   entities:
-    group.bathroom_lights:
+    group.bathroom:
       state: on
 
 - name: Bath lights Off
   entities:
-    group.bathroom_lights:
+    group.bathroom:
       state: off
 
